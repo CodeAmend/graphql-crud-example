@@ -4,7 +4,7 @@ function getCustomers() {
 
   var customers = [];
 
-  for(var id = 0; id < 50; id++) {
+  for(var id = 0; id < 15; id++) {
 
     var name = faker.name.findName();
     var age = faker.random.number();
