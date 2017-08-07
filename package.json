@@ -4,14 +4,17 @@
   "description": "Simple GraphQL Server",
   "main": "server.js",
   "scripts": {
-    "dev:server": "nodemon server.js"
+    "dev:server": "nodemon server.js",
+		"jason:server": "json-server --watch customers.js"
   },
   "keywords": [],
   "author": "Michael Bruce Allen",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
-    "graphql": "^0.10.5"
+    "graphql": "^0.10.5",
+    "json-server": "^0.12.0"
   }
 }
