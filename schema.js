@@ -26,28 +26,34 @@ const CustomerType = new GraphQLObjectType({
 // Root Query
 const rootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
-    fields: {
-      customer: { 
-        type: CustomerType,
-        args: {
-          id: { type: GraphQLString }
-        },
-        resolve(parentValue, args ) {
-          for(let i = 0; i < customers.length; i++) {
-            if(args.id == customers[i].id) {
-              return customers[i];
-            }
+  fields: {
+    // customer needs a type CustomerType
+    // defined with 4 fields
+    // customer takes an arg called 'id'
+    // resolve handles the arg
+    customer: { 
+      type: CustomerType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(parentValue, args ) {
+        for(let i = 0; i < customers.length; i++) {
+          if(args.id == customers[i].id) {
+            return customers[i];
           }
         }
-      },
-      customers: {
-        type: new GraphQLList(CustomerType),
-        resolve() {
-          return customers;
-        }
-
       }
+    },
+    // customers takes new List type of CustomerTypes
+    // all it needs is a resolve because there are no arguments
+    customers: {
+      type: new GraphQLList(CustomerType),
+      resolve() {
+        return customers;
+      }
+
     }
+  }
 }) 
 
 module.exports = new GraphQLSchema({
