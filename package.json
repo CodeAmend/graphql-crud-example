@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev:server": "nodemon server.js",
-		"jason:server": "json-server --watch customers.js"
+    "jason:server": "json-server --watch customers.js"
   },
   "keywords": [],
   "author": "Michael Bruce Allen",
@@ -14,6 +14,7 @@
     "axios": "^0.16.2",
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
+    "faker": "^4.1.0",
     "graphql": "^0.10.5",
     "json-server": "^0.12.0"
   }
